@@ -1,14 +1,20 @@
-# README
+# CMD Hook
 
-Add your hook readme here. Remember to include the following:
+Executes the argument string in the shell as a Python subprocess.
 
-- Tell people how to install it (e.g. pip install ...).
-- Be clear about the purpose of the hook, its capabilities and limitations.
-- Tell people how to use it.
-- Give examples of the hook in use.
+For more information about how this works, see the
+[subprocess documentation](https://docs.python.org/3/library/subprocess.html)
 
-Read our wiki to learn how to use this repo:
-https://github.com/Sceptre/project/wiki/Sceptre-Hook-Template
+Syntax:
 
-If you have any questions or encounter an issue
-[please open an issue](https://github.com/Sceptre/project/issues/new)
+```yaml
+<hook_point>:
+  - !cmd <shell_command>
+```
+
+Example:
+
+```yaml
+before_create:
+  - !cmd 'echo hello'
+```
